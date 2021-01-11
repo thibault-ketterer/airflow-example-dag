@@ -25,8 +25,8 @@ with DAG('canary_dag',
         task_id='check_alive',
         bash_command='''date ;
         date +%s ;
-        date > /var/log/airflow/airflow_last_schedule;
-        date +%s >> /var/log/airflow/airflow_last_schedule
+        date > /tmp/airflow_last_schedule;
+        date +%s >> /tmp/airflow_last_schedule
         ''',
         retries=0,
     ).doc_md = 'task is to check airflow is able to schedule'
