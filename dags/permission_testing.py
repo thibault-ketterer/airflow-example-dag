@@ -49,3 +49,11 @@ with DAG(
         """,
         retries=0,
     ).doc_md = "task lists EMR clusters"
+
+    BashOperator(
+        task_id="list_s3_bucket_contents",
+        bash_command=f"""date ;
+        python {get_base_folder()}/dags/scripts/list_s3_bucket_contents.py
+        """,
+        retries=0,
+    ).doc_md = "task lists contents of one S3 bucket"
