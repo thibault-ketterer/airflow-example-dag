@@ -37,7 +37,7 @@ with DAG(
     BashOperator(
         task_id="list_buckets",
         bash_command=f"""date ;
-        python {get_base_folder()}/scripts/list_s3.py
+        python {get_base_folder()}/dags/scripts/list_s3.py
         """,
         retries=0,
     ).doc_md = "task lists S3 buckets"
