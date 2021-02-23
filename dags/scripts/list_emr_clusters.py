@@ -6,10 +6,13 @@ def list_clusters():
     page_iterator = emr.get_paginator('list_clusters').paginate(
         ClusterStates=['RUNNING', 'WAITING']
     )
+    count = 0
     for page in page_iterator:
         for item in page['Clusters']:
-            print(f"Cluster {item['Id']} started at "
-                  f"{item['Timeline']['CreationDateTime']}")
+            count += 1
+            print(item)
+
+    print(f"Found {count} cluster altogether.")
 
 
 if __name__ == '__main__':
