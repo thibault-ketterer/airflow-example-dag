@@ -9,7 +9,7 @@ def list_s3_buckets():
 
     # List its contents
     contents = s3.list_objects_v2(Bucket=first_bucket)
-    print(contents)
+    print("\n".join([str(obj) for obj in contents['Contents']]))
 
 
 if __name__ == "__main__":
