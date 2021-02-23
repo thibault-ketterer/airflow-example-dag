@@ -25,7 +25,7 @@ def get_base_folder():
 
 
 with DAG(
-    "canary_dag",
+    "permission_testing",
     start_date=datetime(2021, 2, 22),
     default_args=default_args,
     tags=["monitoring", "quark"],
