@@ -57,3 +57,11 @@ with DAG(
         """,
         retries=0,
     ).doc_md = "task lists contents of one S3 bucket"
+
+    BashOperator(
+        task_id="create_and_remove_s3_file",
+        bash_command=f"""date ;
+        python {get_base_folder()}/dags/scripts/create_and_remove_s3_file.py
+        """,
+        retries=0,
+    ).doc_md = "task creates and removes a file in one S3 bucket"
