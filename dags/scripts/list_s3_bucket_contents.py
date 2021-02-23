@@ -8,7 +8,7 @@ def list_s3_buckets():
     print(f"Listing bucket {first_bucket}...")
 
     # List its contents
-    contents = s3.list_objects_v2(BucketName=first_bucket)
+    contents = s3.list_objects_v2(Bucket=first_bucket)
     print(contents)
 
 
