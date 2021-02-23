@@ -3,7 +3,7 @@ import datetime
 
 
 DIRECTORY = "airflow_tests_remove_me"
-FILENAME_PREFIX = "quark_test_file"
+FILENAME_PREFIX = "test_file"
 
 
 def s3_file_path():
@@ -13,8 +13,9 @@ def s3_file_path():
 
 def main():
     s3_resource = boto3.resource('s3')
+    s3_client = boto3.client('s3')
     file_path = s3_file_path()
-    bucket = s3_resource.list_buckets()["Buckets"][0]['Name']
+    bucket = s3_client.list_buckets()["Buckets"][0]['Name']
     file = s3_resource.Object(bucket, file_path)
     print(f"Testing creation and deletion: file {file} in bucket {bucket}.")
 
