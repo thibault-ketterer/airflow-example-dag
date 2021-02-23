@@ -31,7 +31,7 @@ with DAG(
     tags=["monitoring", "quark"],
     max_active_runs=1,
     concurrency=1,
-    schedule_interval=timedelta(minutes=1),
+    schedule_interval=timedelta(minutes=60),
     catchup=False,
 ) as dag:
     BashOperator(
