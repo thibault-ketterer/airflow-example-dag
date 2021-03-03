@@ -17,7 +17,7 @@ def main():
     file_path = s3_file_path()
     bucket = s3_client.list_buckets()["Buckets"][0]['Name']
     file = s3_resource.Object(bucket, file_path)
-    print(f"Testing creation and deletion: file {file} in bucket {bucket}.")
+    print(f"Testing creation and deletion: file {file}.")
 
     # Create file
     file.put(Body="test")
