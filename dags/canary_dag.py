@@ -1,5 +1,7 @@
 # mandatory dag for prometheus exporter and airflow self-check
 #
+# taken from git thibault-ketterer
+#
 from datetime import timedelta, datetime
 
 from airflow import DAG
